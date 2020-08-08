@@ -1,24 +1,47 @@
 import React from "react";
-import logo from "../logo.svg";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  CreateAccountPage,
+  EmailConfirmationLanderPage,
+  SignInPage,
+} from "../auth";
 import "./App.css";
 
 export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/sign-in">
+          <SignInPage />
+        </Route>
+        <Route path="/create-account">
+          <CreateAccountPage />
+        </Route>
+        {/* <Route path="/edit-profile">
+          <EditProfilePage />
+        </Route> */}
+        <Route path="/email-confirmation/success">
+          <EmailConfirmationLanderPage success />
+        </Route>
+        <Route path="/email-confirmation/failure">
+          <EmailConfirmationLanderPage />
+        </Route>
+        {/* <Route path="/" exact>
+          <ReservationsListPage />
+        </Route>
+        <Route path="/search">
+          <SearchPage />
+        </Route>
+        <Route path="/restaurants/:id">
+          <RestaurantDetailPage />
+        </Route>
+        <Route path="/write-a-review/:id">
+          <WriteAReviewPage />
+        </Route>
+        <Route path="/review/thank-you">
+          <WriteAReviewThankYouPage />
+        </Route> */}
+      </Switch>
+    </Router>
   );
 }
