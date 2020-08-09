@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Button, ErrorMessage, Heading, Modal, TextInput } from "../ui";
+import { signIn } from "../auth";
 import { ResetPasswordForm } from "./ResetPasswordForm";
 
 const Form = styled.div`
@@ -36,7 +37,12 @@ export const SignInForm = () => {
   const history = useHistory();
 
   const onSignInClicked = async () => {
-    // Firebase code goes here
+    try {
+      await signIn(emailValue, passwordValue);
+      history.push("/");
+    } catch (e) {
+      setErrorMessage(e.message);
+    }
   };
 
   const onSignInWithGoogleClicked = async () => {
