@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 
-export const addAuthLister = (callback) => {
+export const addAuthListener = (callback) => {
   const onChange = (user) => {
     if (user) {
       callback({});

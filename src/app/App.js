@@ -7,6 +7,7 @@ import {
   ProtectedRoute,
   useAuth,
 } from "../auth";
+import { ReservationsListPage } from "../reservations";
 import "./App.css";
 
 export function App() {
@@ -29,10 +30,10 @@ export function App() {
         <Route path="/email-confirmation/failure">
           <EmailConfirmationLanderPage />
         </Route>
-        {/* <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/' exact>
+        <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path="/" exact>
           <ReservationsListPage />
         </ProtectedRoute>
-        <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/search'>
+        {/* <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/search'>
           <SearchPage />
         </ProtectedRoute>
         <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/restaurants/:id'>
