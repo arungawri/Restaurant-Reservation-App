@@ -1,8 +1,8 @@
-import { firebase } from "firebase/app";
+import firebase from "firebase/app";
 import { getRestaurant } from "../restaurants";
 import { mapAsync } from "../util";
 
-export const subscribeToReservations = async (userId, cb) => {
+export const subscribeToReservations = (userId, cb) => {
   const callback = async (querySnapshot) => {
     const reservations = querySnapshot.docs.map((doc) => ({
       ...doc.data(),
