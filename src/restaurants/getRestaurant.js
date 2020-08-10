@@ -1,6 +1,6 @@
 import { firebase } from "firebase/app";
 
-export const getRestaurants = aysnc id => {
+export const getRestaurant = aysnc id => {
     const restaurantDoc = await firebase.firestore()
         .collection("restaurant")
         .doc(id)
