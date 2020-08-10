@@ -1,6 +1,7 @@
 export { addAuthListener } from "./addAuthListener";
 export { CreateAccountPage } from "./CreateAccountPage";
 export { EmailConfirmationLanderPage } from "./EmailConfirmationLanderPage";
+export { getCurrentUser } from "./getCurrentUser";
 export { ProtectedRoute } from "./ProtectedRoute";
 export { signIn } from "./signIn";
 export { SignInForm } from "./SignInForm";
