@@ -8,6 +8,7 @@ import {
   useAuth,
 } from "../auth";
 import { ReservationsListPage } from "../reservations";
+import { RestaurantDetailPage } from "../restaurants";
 import "./App.css";
 
 export function App() {
@@ -35,11 +36,15 @@ export function App() {
         </ProtectedRoute>
         {/* <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/search'>
           <SearchPage />
-        </ProtectedRoute>
-        <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/restaurants/:id'>
+        </ProtectedRoute> */}
+        <ProtectedRoute
+          isAuthed={!!user}
+          isLoading={isLoading}
+          path="/restaurants/:id"
+        >
           <RestaurantDetailPage />
         </ProtectedRoute>
-        <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/write-a-review/:id'>
+        {/* <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/write-a-review/:id'>
           <WriteAReviewPage />
         </ProtectedRoute>
         <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/review/thank-you'>

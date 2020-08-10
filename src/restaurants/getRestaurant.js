@@ -3,7 +3,7 @@ import firebase from "firebase/app";
 export const getRestaurant = async (id) => {
   const restaurantDoc = await firebase
     .firestore()
-    .collection("restaurant")
+    .collection("restaurants")
     .doc(id)
     .get();
 

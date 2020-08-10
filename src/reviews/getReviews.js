@@ -5,7 +5,7 @@ import { getUserInfo } from "../user";
 export const getReviews = async (restaurantId) => {
   const querySnapshot = await firebase
     .firestore()
-    .collections("reviews")
+    .collection("reviews")
     .where("restaurantId", "==", restaurantId)
     .get();
 
@@ -15,10 +15,10 @@ export const getReviews = async (restaurantId) => {
   }));
 
   const populatedReviews = await mapAsync(reviews, async (review) => {
-    const auther = await getUserInfo(review.userId);
+    const author = await getUserInfo(review.userId);
     return {
       ...review,
-      auther,
+      author,
     };
   });
 
