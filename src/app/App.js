@@ -9,6 +9,7 @@ import {
 } from "../auth";
 import { ReservationsListPage } from "../reservations";
 import { RestaurantDetailPage } from "../restaurants";
+import { EditProfilePage } from "../user";
 import "./App.css";
 
 export function App() {
@@ -22,9 +23,13 @@ export function App() {
         <Route path="/create-account">
           <CreateAccountPage />
         </Route>
-        {/* <ProtectedRoute isAuthed={!!user} isLoading={isLoading} path='/edit-profile'>
+        <ProtectedRoute
+          isAuthed={!!user}
+          isLoading={isLoading}
+          path="/edit-profile"
+        >
           <EditProfilePage />
-        </ProtectedRoute> */}
+        </ProtectedRoute>
         <Route path="/email-confirmation/success">
           <EmailConfirmationLanderPage success />
         </Route>
